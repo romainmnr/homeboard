@@ -16,7 +16,7 @@
           <div>12:30</div>
         </div>
         <div class="today">
-          <img src="/cloud.svg" />
+          <img src="cloud.svg" />
           <div>18°C/20°C</div>
         </div>
     

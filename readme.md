@@ -1,24 +1,8 @@
 # homeboard
 
-## Project setup
-```
-npm install
-```
+![alt text](https://romainmnr.com/homeboard/preview.png "Preview")
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Description
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Vue.Js application for home dashboard.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
