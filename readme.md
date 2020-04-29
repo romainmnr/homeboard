@@ -1,6 +1,6 @@
 # homeboard
 
-![Preview](https://github.com/romainmnr/homeboard/tree/master/public/preview.png "Preview")
+![alt text](https://github.com/romainmnr/homeboard/tree/master/public/preview.png "Preview")
 
 ## Description
 
