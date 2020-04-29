@@ -1,0 +1,473 @@
+
+
+
+.blank-tile{
+  width: $tile-inner-size;
+  padding: $tile-padding;
+  margin: $tile-gutter / 2;
+}
+
+.welcome-tile{
+  width: $tile-inner-size;
+  padding: $tile-padding;
+  margin: $tile-gutter / 2;
+
+  .welcome-tile-header{
+    font-size: 20px;  
+    font-weight: 400;
+  }
+
+  span{
+    font-size: 12px;
+    font-weight: 200;
+    color: $color-grey-dark;
+  }
+  .welcome-tile-link{
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-black;
+    cursor: pointer;
+  }
+
+}
+.weather-tile{
+  width: $tile-inner-size;
+  padding: $tile-padding;
+  margin: $tile-gutter / 2;
+
+  .datetime{
+
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include align-content(center);
+    font-size: 12px;
+    font-weight: 400;
+    color: $color-grey-dark;
+    div{
+      margin: 0 5px;
+    }
+
+  }
+  .today{
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include align-content(flex-start);
+
+    img{
+      height: 50px;
+    }
+    div{
+      font-size: 17px;
+      font-weight: 600;
+      color: $color-grey-dark;
+    }
+    
+  }
+  .forecast{
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+    @include align-content(flex-start);
+    margin-top: 5px;
+
+    .col{
+      @include flexbox();
+      @include flex-direction(column);
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include justify-content(center);
+      @include align-content(center);
+      padding: 0 5px;
+
+      .value{
+        font-size: 12px;
+        font-weight: 400;
+        color: $color-grey-dark;
+      }
+      .label{
+        font-size: 12px;
+        font-weight: 400;
+        color: $color-grey-medium;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+//-- Tiles
+
+.tile{
+
+  width: $tile-inner-size;
+  background: $color-white;
+  @include border-radius($tile-border-radius);
+
+  @include box-shadow( 5px, 5px, 10px, $color-grey-medium);
+  padding: $tile-padding;
+  margin: $tile-gutter / 2;
+
+  &.tile-2x{
+    width: $tile-inner-size-2x;
+  }
+  &.tile-3x{
+    width: $tile-inner-size-3x;
+  }
+  @media only screen and (max-width: $tile-inner-size-2x) { 
+    &.tile-2x{
+      width: $tile-inner-size;
+    }
+    &.tile-3x{
+      width: $tile-inner-size;
+    }
+  }
+  @media only screen and (min-width: $tile-inner-size-2x) and (max-width: $tile-inner-size-3x) { 
+    &.tile-2x{
+      width: $tile-inner-size-2x;
+    }
+    &.tile-3x{
+      width: $tile-inner-size-2x;
+    }
+  }
+
+
+
+  &.selected{
+    background: $color-blue!important;
+    fill: $color-white!important;
+    color: $color-white !important;
+  
+    .btn{
+      border-color: $color-opac!important;
+      background-color: $color-white-opac!important;
+    }
+
+    .tile-header{
+  
+      .tile-icon.tile-red,
+      .tile-icon.tile-green,
+      .tile-icon.tile-orange,
+      .tile-icon.tile-purple,
+      .tile-icon.tile-blue,
+      .tile-icon
+      {
+        background-color: $color-white-opac!important;
+        color: $color-white!important;
+        fill: $color-white!important;
+      }
+ 
+    }
+    .slider{
+      background-color: $color-white-opac!important;
+      .slider-fill{
+        background-color: $color-white!important;
+      }
+    }
+    .control-number{
+      .btn{
+        border-color: $color-opac!important;
+        color: $color-white!important;
+        fill: $color-white!important;
+      }
+    }
+    
+  }// selected
+
+  .tile-header{
+    width:100%;
+
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(flex-start);
+    @include align-content(flex-start);
+
+    &:nth-child(2){
+      margin-top: 10px;
+    }
+    
+    .tile-icon{
+      width: $tile-icon-size;
+      height: $tile-icon-size;
+      text-align: center;
+      background-color: $color-grey-light;
+      @include border-radius($btn-size);
+      color: $color-grey-dark;
+      border: solid 1px $color-opac;
+
+      font-size: 12px;
+      font-weight: 400;
+
+      &.hover:hover{
+        cursor: pointer;
+        border-color: $color-grey-dark;
+      }
+
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include justify-content(center);
+      @include align-content(center);
+
+      svg, i, span{
+        vertical-align: middle;
+        fill: $color-grey-dark;
+        padding: 0 5px;
+        font-size: 16px;
+
+      }
+
+      &.tile-green{
+        background-color: $color-green-opac;
+        color: $color-green;
+        svg, i, span{
+          fill: $color-green;
+        }
+        &.hover:hover{
+          border-color:  $color-green;
+        }
+      }
+      &.tile-red{
+        background-color: $color-red-opac;
+        color: $color-red;
+        svg, i, span{
+          fill: $color-red;
+        }
+        &.hover:hover{
+          border-color:  $color-red;
+        }
+      }
+      &.tile-blue{
+        background-color: $color-blue-opac;
+        color: $color-blue;
+        svg, i, span{
+          fill: $color-blue;
+        }
+        &.hover:hover{
+          border-color:  $color-blue;
+        }
+      }
+      &.tile-orange{
+        background-color: $color-orange-opac;
+        color: $color-orange;
+        svg, i, span{
+          fill: $color-orange;
+        }
+        &.hover:hover{
+          border-color:  $color-orange;
+        }
+      }
+      &.tile-purple{
+        background-color: $color-purple-opac;
+        color: $color-purple;
+        svg, i, span{
+          fill: $color-purple;
+        }
+        &.hover:hover{
+          border-color:  $color-purple;
+        }
+      }
+    }
+
+    .tile-title{
+      @include flex-grow(1);
+      @include flex-shrink(1);
+      margin: 0 10px;
+      
+      div:nth-child(1){
+        font-size: 15px;  
+        font-weight: 400;
+      }
+      div:nth-child(2){
+        font-size: 12px;
+        font-weight: 200;
+      }
+
+    }
+
+    .tile-actions{
+      color: $color-grey-medium;
+      cursor: pointer;
+
+      svg, i, span{
+        fill: $color-grey-light;
+        height: 0.8em;
+      }
+
+      &:hover{
+        color: $color-grey-dark;
+        svg, i, span{
+          fill: $color-grey-dark;
+        }
+      }
+    }
+
+  }
+  .tile-content{
+    @include flexbox();
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    min-height: 48px;
+    margin-top: 4px;
+
+    //time slider
+    .slider{
+      height: 40px;
+      @include border-radius($tile-border-radius);
+      background-color: $color-grey-light;
+      overflow: hidden;
+      cursor: col-resize;
+
+      .slider-fill{
+        height: 100%;
+        background-color: $color-black;
+      }
+
+    }
+
+
+    //control-number
+    .control-number{
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include justify-content(center);
+      @include align-content(center);
+
+      div{
+        margin: 0 5px;
+      }
+
+    }
+    .control-value{
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include justify-content(center);
+      @include align-content(center);
+      
+      > div{
+        @include flexbox();
+        @include flex-direction(column);
+        @include flex-wrap(no-wrap);
+        @include align-items(center);
+        @include justify-content(center);
+        @include align-content(center);
+        @include border-radius(10px);
+
+        margin: 0 5px;
+        background-color: $color-grey-light;
+        color: $color-grey-dark;
+        min-width: $btn-size;
+        height: $btn-size;
+        padding: 5px;
+
+        .value{
+          font-size: 12px;
+          font-weight: 400;
+        }
+        .unit{
+          font-size: 10px;
+          font-weight: 200;
+        }
+      }
+    }
+
+    //tile button list
+    .btn-list{
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-items(flex-start);
+      @include justify-content(flex-start);
+      @include align-content(flex-start);
+
+      &.small{
+        div{
+          margin: 0 2px;
+        }
+      }
+      
+      div{
+        @include flexbox();
+        @include flex-direction(column);
+        @include flex-wrap(wrap);
+        @include align-items(center);
+        @include justify-content(center);
+        @include align-content(center);
+        margin: 0 5px;
+
+        span{
+          padding-top:3px;
+          font-size: 10px;
+          font-weight: 300;
+          color: $color-grey-dark;
+        }
+      }
+
+    }
+  }
+}// tile
+
+
+
+
+// DASHBOARD
+
+.dashboard{
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include align-items(flex-start);
+  @include justify-content(center);
+  @include align-content(flex-start);
+
+  padding: 20px;
+
+  @media only screen and (max-width: 375px) { 
+    padding: 10px;
+  }
+  
+
+  .grid{
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(flex-start);
+    @include align-content(flex-start);
+
+    //padding:  $tile-gutter / 2;
+    //max-width: 3 * ($tile-inner-size +  $tile-gutter + ( 2 * $tile-padding ) );
+
+    // &.secondary{
+    //   max-width: 2 * ($tile-inner-size +  $tile-gutter + ( 2 * $tile-padding ) );
+    //   @media only screen and (min-width: 1260px) {
+    //     max-width: 3 * ($tile-inner-size +  $tile-gutter + ( 2 * $tile-padding ) );
+    //   }
+
+    // }
+  }
+
+
+
+}

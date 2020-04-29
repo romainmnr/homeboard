@@ -1,0 +1,46 @@
+
+$btn-size:30px;
+
+
+$border-default:solid 1px $color-grey-medium;
+$border-radius:20px;
+$border-radius-large:25px;
+
+$row-height:32px;
+$radius-table:5px;
+$padding-elt: 10px;
+
+$font-family:Roboto;
+$font-table-strong : 500 14px/14px $font-family, sans-serif;
+$font-table-regular : 400 14px/14px $font-family, sans-serif;
+$font-table-muted : 400 12px/12px $font-family, sans-serif;
+
+
+
+$tile-icon-size:40px;
+$tile-border-radius:15px;
+$tile-gutter:8px;
+$tile-padding:5px;
+
+$tile-inner-size:165px;
+$tile-inner-size-2x:(2 * $tile-inner-size) + (2 * $tile-padding) + $tile-gutter;
+$tile-inner-size-3x:(3 * $tile-inner-size) + (4 * $tile-padding) + (2 * $tile-gutter);
+
+@media only screen and (max-width: 375px) { 
+  $tile-inner-size:130px;
+  $tile-gutter:6px;
+  $tile-padding:6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+
+.swipe-panel{
+  position: absolute;
+  z-index: 500;
+  bottom: 0;
+  width: 100%;
+  background-color: $color-white;
+  @include border-radius($border-radius-large $border-radius-large 0 0 );
+  @include box-shadow( 0px, 0px, 5px, $color-grey-medium);
+  @include transition(all 0.1s linear 0s);
+
+  &.opened{
+    background-color: $color-grey-light;
+    @include box-shadow( 0px, 0px, 5px, $color-grey-dark);
+
+  }
+
+
+  .msg{
+    width: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include justify-content(center);
+    @include align-content(center);
+    color: $color-grey-medium;
+    margin: auto;
+    h1{
+      font-weight: 300;
+    }
+
+    svg, i, span{
+      fill: $color-grey-medium;
+    }
+
+  }
+
+
+  .menu-header{
+    padding: 0 5px;
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include justify-content(center);
+    @include align-content(center);
+
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0px 0 5px 0;
+
+    @media only screen and (min-width: 600px) {
+      padding: 0 20px;
+    }
+
+    .page-title{
+      font-weight: 500;
+      font-size: 15px;
+      color: $color-black;
+    }
+    
+    .blank{
+      @include flex-grow(1);
+      @include flex-shrink(1);
+      height:25px;
+      cursor:pointer;
+    }
+
+    .shortcuts{
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-items(right);
+      @include justify-content(right);
+      @include align-content(right);
+
+
+      div{
+        margin: 0 3px;
+      }
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+
+  .swipe-panel-content{
+    @include flexbox();
+    @include flex-direction(column);
+    @include flex-wrap(no-wrap);
+    @include align-items(center);
+    @include align-content(flex-start);
+    height: 70vh;
+    overflow-y: scroll;
+
+    .user{
+      @include flexbox();
+      @include flex-direction(column);
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include justify-content(center);
+      @include align-content(center);
+      margin-top: 15px;
+
+      .user-thumb{
+        width: 70px;
+        height: 70px;
+        @include border-radius(50%);
+
+        border: $border-default;
+        background-size: 70px 70px;
+        background-position: 50% 50%;
+        background-size: cover;
+        @include box-shadow( 2px, 2px, 5px, $color-grey-light);
+      }
+
+      .user-name{
+        font-weight: 400;
+        font-size: 15px;
+        color: $color-black;
+      }
+
+      .user-email{
+        font-weight: 100;
+        font-size: 12px;
+        color: $color-grey-dark;
+        font-style: italic;
+      }
+    }
+
+    .blocks{
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include align-items(flex-start);
+      @include justify-content(space-between);
+      @include align-content(flex-start);
+
+      .block{
+        width: 265px;
+        padding: 5px;
+        margin: 10px;
+
+        .block-title{
+          color: $color-black;
+          font-weight: 400;
+          padding-bottom: 10px;
+
+        }
+        .block-content{
+          padding: 20px;
+        }
+      }
+    }
+
+
+
+  }
+  
+}
+
+
