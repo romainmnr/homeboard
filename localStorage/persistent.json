@@ -1,0 +1,166 @@
+{
+  "devices": [
+    { "id": "matrix", "moduleName": "Matrix", "config": {"host": "http://matrix.romainmnr.com"} }
+
+  ],
+  "pages": [
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "icon": "fas fa-home",
+      "tiles": [
+        {
+          "id": "151",
+          "size": 1,
+          "title": {
+            "type": "dynamicValue",
+            "default": "A def title",
+            "script"  : "console.log(getDevice('matrix'));value = getDevice('matrix').runningAction"
+          },
+          "subtitle": "description",
+          "iconType": "icon",
+          "iconColor": "red",
+          "iconContent": "fas fa-home",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "controlValue",
+          "contentConfig": {}
+        },
+        {
+          "id": "154",
+          "size": 2,
+          "title": "a title",
+          "subtitle": "description",
+          "iconType": "raw",
+          "iconColor": "blue",
+          "iconContent": "123",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "btnList",
+          "contentConfig": {}
+        },
+        {
+          "id": "31",
+          "size": 1,
+          "title": "a title",
+          "subtitle": "description",
+          "iconType": "icon",
+          "iconColor": "red",
+          "iconContent": "fas fa-home",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "doubleTile",
+          "contentConfig": {}
+        },
+        {
+          "id": "431",
+          "size": 1,
+          "title": "a title",
+          "subtitle": "description",
+          "iconType": "icon",
+          "iconColor": "green",
+          "iconContent": "fas fa-home",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "btnList",
+          "contentConfig": {}
+        },
+        {
+          "id": "4341",
+          "size": 1,
+          "title": "a title",
+          "subtitle": "description",
+          "iconType": "icon",
+          "iconColor": "green",
+          "iconContent": "fas fa-home",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "",
+          "contentConfig": {}
+        },
+        {
+          "id": "21",
+          "size": 1,
+          "title": "a title",
+          "subtitle": "description",
+          "iconType": "icon",
+          "iconColor": "purple",
+          "iconContent": "fas fa-home",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "slider",
+          "contentConfig": {}
+        },
+        {
+          "id": "123",
+          "size": 1,
+          "title": "a title",
+          "subtitle": "description",
+          "iconType": "icon",
+          "iconColor": "orange",
+          "iconContent": "fas fa-home",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "controlNumber",
+          "contentConfig": {}
+        }
+      ]
+    },
+    {
+      "id": "livingroom",
+      "name": "Living Room",
+      "icon": "fas fa-couch",
+      "tiles": [
+        {
+          "id": "1652638",
+          "size": 2,
+          "title": "Matrix",
+          "subtitle": {
+            "type": "dynamicValue",
+            "default": "A def title",
+            "script"  : "value = getDevice('matrix').runningAction"
+          },
+          "iconType": "icon",
+          "iconColor": "purple",
+          "iconContent": "fas fa-border-all",
+          "isIconClickable": true,
+          "iconAction": {},
+          "settingIcon": "fas fa-sliders-h",
+          "settingPanelType": "",
+          "contentType": "btnList",
+          "contentConfig": {
+            "compact" : false, 
+            "buttons" : [
+              {
+                "color"   : "black", 
+                "icon"    : "fas fa-power-off", 
+                "label"   : "Off", 
+                "onClick" : {}
+              },
+              {
+                "color"   : "blue", 
+                "icon"    : "fas fa-random", 
+                "label"   : "Pixel", 
+                "onClick" : {}
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { EventBus } from '@/scripts/EventBus.js';
+import { EventBus } from '@/EventBus.js';
 import SwipePanelSettings from '@/components/SwipePanel/Panels/SwipePanelSettings'
 import SwipePanelPage from '@/components/SwipePanel/Panels/SwipePanelPage'
 import SwipePanelComponent from '@/components/SwipePanel/Panels/SwipePanelComponent'
@@ -62,7 +62,7 @@ export default {
       bottomPos:'0px',
       panelTitle:'',
       currentPage:'<i class="fas fa-home"></i> Dashboard',
-      selectedComponent:'Lamp',
+      selectedComponent:{},
     }
   },
   mounted(){
@@ -71,6 +71,14 @@ export default {
     EventBus.$on('MainContent.clickOverlay', ()=>{
       this.closeMenu()
     })
+    EventBus.$on('SwipePanel.open', (tab)=>{
+      this.switchContent(tab);
+      this.openMenu();
+    })
+    EventBus.$on('Tile.select', (tileConfig)=>{
+      this.selectedComponent = tileConfig
+    })
+    
   },
   computed:{
     isOpen(){
@@ -88,7 +96,7 @@ export default {
         this.panelTitle = '<i class="fas fa-sliders-h"></i> Settings';
           break;
         case 'component':
-          this.panelTitle = this.currentPage +' <i class="fas fa-chevron-right"></i> '+ this.selectedComponent;
+          this.panelTitle = this.currentPage +' <i class="fas fa-chevron-right"></i> '+ this.selectedComponent.title;
           break;
         default:
           this.panelTitle = this.currentPage;

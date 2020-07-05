@@ -10,258 +10,111 @@
         <span>Living room is opening</span>
         <div class="welcome-tile-link" @click="isSelected=!isSelected">See all activities</div>
       </div>
-      <div class="weather-tile">
+      
+      <div class="weather-tile" @click="selectWeather()">
         <div class="datetime">
-          <div>Jeudi 14 Avril 2020 </div>
-          <div>12:30</div>
+          <div>{{date}}</div>
+          <div>{{time}}</div>
         </div>
         <div class="today">
-          <img src="cloud.svg" />
-          <div>18°C/20°C</div>
+          <img :src="weather.condition.icon" />
+          <div>{{weather.condition.text}}</div>
+          <div>{{weather.temp_c}}°C</div>
         </div>
-    
+        <div class="forecast">
+          <div class="col">
+            <div class="value">{{weather.feelslike_c}}°C</div>
+            <div class="label">Feel</div>
+          </div>
+          <div class="col">
+            <div class="value">{{weather.wind_kph}}Km/H</div>
+            <div class="label">{{weather.wind_dir}}</div>
+          </div>
+          <div class="col">
+            <div class="value">{{weather.precip_mm}}</div>
+            <div class="label">mm</div>
+          </div>
+        </div>
       </div>
+    
       <!-- <div class="blank-tile" /> -->
 
-
-
-      <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-green"><i class="fas fa-home"></i></div>
-          <div class="tile-title">
-            <div>Title</div>
-            <div>description here</div><!-- limited to 23 char -->
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-palette"></i>
-          </div>
-        </div>
-        <div class="tile-content">
-
-
-          
-          <div class="slider">
-            <div class="slider-fill" style="width:50%"/>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-red"><i class="fas fa-home"></i></div>
-          <div class="tile-title">
-            <div>Living room</div>
-            <div>Off</div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-palette"></i>
-          </div>
-        </div>
-        <div class="tile-content">
-          <div class="btn-list small">
-            <div>
-              <div class="btn btn-circle btn-blue"><i class="fas fa-home"></i></div>
-              <span>Ambiant</span>
-            </div>
-            <div>
-              <div class="btn btn-circle btn-purple"><i class="fas fa-sliders-h"></i></div>
-              <span>TV</span>
-            </div>
-            <div>
-              <div class="btn btn-circle btn-grey"><i class="fas fa-lightbulb"></i></div>
-              <span>Cosy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-            
-      <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-orange hover"><i class="fas fa-lightbulb"></i></div>
-          <div class="tile-title">
-            <div>Lamp</div>
-            <div>Living room</div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-        </div>
-        <div class="tile-header">
-          <div class="tile-icon tile-orange hover"><i class="fas fa-lightbulb"></i></div>
-          <div class="tile-title">
-            <div>Lamp</div>
-            <div>Living room</div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-purple"><i class="fas fa-fan"></i></div>
-          <div class="tile-title">
-            <div>Heater</div>
-            <div>Bedroom</div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-info-circle"></i>
-          </div>
-        </div>
-        <div class="tile-content">
-          <div class="control-number">
-            <div class="btn btn-circle btn-grey"><i class="fas fa-minus"></i></div>
-            <div>25°C</div>
-            <div class="btn btn-circle btn-grey"><i class="fas fa-plus"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tile tile-2x" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-blue"><i class="fas fa-home"></i></div>
-          <div class="tile-title">
-            <div>Scenes</div>
-            <div></div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-        </div>
-        <div class="tile-content">
-    
-          <div class="btn-list">
-            <div>
-              <div class="btn btn-circle btn-blue"><i class="fas fa-home"></i></div>
-              <span>Home</span>
-            </div>
-            <div>
-              <div class="btn btn-circle btn-purple"><i class="fas fa-sliders-h"></i></div>
-              <span>Out</span>
-            </div>
-                <div>
-              <div class="btn btn-circle btn-grey"><i class="fas fa-lightbulb"></i></div>
-              <span>Home</span>
-            </div>
-            <div>
-            <div class="btn btn-circle btn-black"><i class="fas fa-sliders-h"></i></div>
-              <span>Out</span>
-            </div>
-            <div>
-              <div class="btn btn-circle btn-orange"><i class="fas fa-home"></i></div>
-              <span>Home</span>
-            </div>
-            <div>
-              <div class="btn btn-circle btn-green"><i class="fas fa-lightbulb"></i></div>
-              <span>Home</span>
-            </div>
-      
-          </div>
-
-        </div>
-      </div>
-
-      <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-blue">30°C</div>
-          <div class="tile-title">
-            <div>Temperature</div>
-            <div>Bedroom</div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-info-circle"></i>
-          </div>
-        </div>
-      </div>
-      <div class="tile tile-2x" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon"><i class="fas fa-home"></i></div>
-          <div class="tile-title">
-            <div>Word of the day</div>
-            <div></div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-        </div>
-        <div class="tile-content">
-            <div>description here sfsdf sdfsdf sdfdsf</div>
-        </div>
-      </div>
-
-      <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-red"><i class="fas fa-home"></i></div>
-          <div class="tile-title">
-            <div>Title</div>
-            <div>description here</div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-        </div>
-        <div class="tile-content">
-   
-          <div class="control-value">
-            <div>
-              <div class="value"><i class="fas fa-arrow-down"></i> 120</div>
-              <div class="unit">Mbps</div>
-            </div>
-            <div>
-              <div class="value"><i class="fas fa-arrow-up"></i> 90</div>
-              <div class="unit">Mbps</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-            <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-green hover"><i class="fas fa-couch"></i></div>
-          <div class="tile-title">
-            <div>Lamp</div>
-            <div>Living room</div>
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-sliders-h"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="tile" :class="{selected:isSelected}">
-        <div class="tile-header">
-          <div class="tile-icon tile-green"><i class="fas fa-home"></i></div>
-          <div class="tile-title">
-            <div>Title</div>
-            <div>description here</div><!-- limited to 23 char -->
-          </div>
-          <div class="tile-actions">
-            <i class="fas fa-palette"></i>
-          </div>
-        </div>
-        <div class="tile-content">
-          <div class="slider">
-            <div class="slider-fill" style="width:50%"/>
-          </div>
-        </div>
-      </div>
+      <tile v-for="tile in page.tiles" :key="tile.id" :config="tile" />
 
     </div><!-- end of grid #1 -->
-    
-   
   </div>
 </template>
 
 <script>
+import Tile from './../controls/Tile'
+import moment from 'moment'
+import axios from 'axios'
+import { EventBus } from '@/EventBus.js';
+
+
 export default {
   name: 'Dashboard',
+  props: {   
+    page: {type:Object, default:()=>{return {}}}
+  },
+  components:{
+    Tile
+  },
   data: function(){
     return {
-      isSelected: false
+      isSelected: false,
+      weatherApiKey: "9997f78ebf6b4f99a15190339200605",
+      date:'',
+      time:'',
+      position: undefined, //position.coords.latitude, position.coords.longitude;
+      weather: {condition:{}}
+
+    }
+  },
+  mounted(){
+    moment.locale('fr');
+    this.init();
+    setInterval(() => {
+      this.init();
+    }, 6000);
+  },
+
+  methods:{
+    init(){
+      this.getLocation();
+      this.date = moment().format("dddd Do MMMM YYYY");
+      this.time =  moment().format("HH:mm");
+    },
+    getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          this.position = position;
+          this.getWeather()
+        });
+      }
+    },
+    getWeather(){
+      //https://www.weatherapi.com/docs/
+      axios
+      .get('https://api.weatherapi.com/v1/current.json', {
+        params: {
+          key: this.weatherApiKey,
+          q:`${this.position.coords.latitude},${this.position.coords.longitude}`
+        }
+      })
+      .then( response => {
+        this.weather = response.data.current
+      })
+      .catch(error => {
+        console.error('getWeather', error);
+      });
+    },
+    selectWeather(){
+      EventBus.$emit('Tile.select', {id:'000',title:'Weather',settingPanelType:'weather'});
+      EventBus.$emit('SwipePanel.open', 'component');
     }
   }
+
 }
 </script>
 

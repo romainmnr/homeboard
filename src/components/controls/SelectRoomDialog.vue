@@ -10,19 +10,23 @@
             <div>4 rooms</div>
         </div>
       </div>
-      <div class="room">Kitchen</div>
-      <div class="room active">Living room</div>
-      <div class="room ">Bedroom</div>
+      <div class="room" 
+        @click="goto(page.id)" 
+        v-for="page in pages" :key="page.id" 
+        :class="{active:isActive(page.id)}">{{page.name}}</div>
       <div class="room btn btn-blue"><i class="fas fa-plus"></i> Add room</div>
     </div> 
   </div>
 </template>
 
 <script>
-import { EventBus } from '@/scripts/EventBus.js';
+import { EventBus } from '@/EventBus.js';
 
 export default {
   name: 'SelectRoomDialog',
+  props: {   
+    pages: Array
+  },
   data: function(){
     return {
       showDialog: false
@@ -31,12 +35,20 @@ export default {
   mounted () {
     EventBus.$on('SelectRoomDialog.show', this.openDialog)
   },
+
   methods:{
     closeDialog(){
       this.showDialog=false
     },
     openDialog(){
       this.showDialog=true
+    },
+    isActive(pageId){
+      return this.$route.params.pageId == pageId
+    },
+    goto(pageId){
+      this.$router.push({ path: pageId })
+      this.closeDialog()
     }
 
   }

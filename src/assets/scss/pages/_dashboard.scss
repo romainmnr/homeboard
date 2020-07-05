@@ -34,6 +34,7 @@
   width: $tile-inner-size;
   padding: $tile-padding;
   margin: $tile-gutter / 2;
+  cursor: pointer;
 
   .datetime{
 
@@ -96,6 +97,9 @@
         font-size: 12px;
         font-weight: 400;
         color: $color-grey-medium;
+      }
+      img{
+        height: 40px;
       }
     }
   }
@@ -196,6 +200,7 @@
     @include align-items(flex-start);
     @include justify-content(flex-start);
     @include align-content(flex-start);
+    cursor: pointer;
 
     &:nth-child(2){
       margin-top: 10px;
