@@ -1,0 +1,25 @@
+.grid{
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
+  @include align-content(flex-start);
+
+  &.center{
+    @include align-items(center);
+    @include justify-content(center);
+    @include align-content(center);
+  }
+
+  //padding:  $tile-gutter / 2;
+  //max-width: 3 * ($tile-inner-size +  $tile-gutter + ( 2 * $tile-padding ) );
+
+  // &.secondary{
+  //   max-width: 2 * ($tile-inner-size +  $tile-gutter + ( 2 * $tile-padding ) );
+  //   @media only screen and (min-width: 1260px) {
+  //     max-width: 3 * ($tile-inner-size +  $tile-gutter + ( 2 * $tile-padding ) );
+  //   }
+
+  // }
+}
