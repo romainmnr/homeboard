@@ -1,3 +1,4 @@
+
 @import './base.css';
 
 
@@ -25,3 +26,28 @@ a,
   }
 }
 
+
+
+
+
+table.styled-table
+{
+  margin: 2px;
+
+}
+
+
+table.styled-table tr {
+
+  border-bottom: solid 1px #efefef;
+
+}
+
+
+table.styled-table tr:nth-child(even) {
+  background-color: var(--color-background-soft);
+}
+
+table.styled-table td {
+  padding: 5px 8px;
+}
