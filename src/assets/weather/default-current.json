@@ -1,0 +1,35 @@
+{
+    "data": {
+        "time": "2025-07-09T15:41:00Z",
+        "values": {
+            "altimeterSetting": 1020.17,
+            "cloudBase": null,
+            "cloudCeiling": null,
+            "cloudCover": 0,
+            "dewPoint": 9.1,
+            "freezingRainIntensity": 0,
+            "humidity": 44,
+            "precipitationProbability": 0,
+            "pressureSeaLevel": 1019.7,
+            "pressureSurfaceLevel": 966.47,
+            "rainIntensity": 0,
+            "sleetIntensity": 0,
+            "snowIntensity": 0,
+            "temperature": 22.1,
+            "temperatureApparent": 22.1,
+            "uvHealthConcern": 0,
+            "uvIndex": 2,
+            "visibility": 16,
+            "weatherCode": 1000,
+            "windDirection": 41,
+            "windGust": 3.9,
+            "windSpeed": 2.3
+        }
+    },
+    "location": {
+        "lat": 46.521827697753906,
+        "lon": 6.632702350616455,
+        "name": "Lausanne, District de Lausanne, Vaud, Schweiz/Suisse/Svizzera/Svizra",
+        "type": "administrative"
+    }
+}

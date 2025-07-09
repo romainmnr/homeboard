@@ -1,7 +1,14 @@
 <template>
   <div>
-  <p>{{ sentence }}</p>
-  <p>{{ birthSentence }}</p>
+    <h3>Ce jour là:</h3>
+    <ul>
+      <li
+        v-for="(sentence, index) in onThisDay?.births"
+        :key="`births-${index}`"
+      >{{ sentence.text }}</li>
+    </ul>
+    <p>{{ sentence }}</p>
+    <p>{{ birthSentence }}</p>
 
   </div>
 </template>
@@ -9,11 +16,18 @@
 <script setup lang="ts">
 import { onMounted, ref, computed, type Ref } from 'vue'
 
+type OnThisDayItem = {
+  text: string
+}
 
+type OnThisDay = {
+  selected: OnThisDayItem[]
+  births: OnThisDayItem[]
+}
 
 const apiKey = ref(import.meta.env.VITE_WIKIMEDIA_TOKEN)
 
-const onThisDay: Ref<unknown> = ref(null)
+const onThisDay: Ref<OnThisDay | null> = ref(null)
 
 
 
